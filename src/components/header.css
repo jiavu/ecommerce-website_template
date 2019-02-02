@@ -1,0 +1,34 @@
+.header {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem;
+}
+.header > * {
+    align-self: center;
+}
+
+/*============*/
+/* Navigation */
+/*============*/
+
+nav {
+    z-index: 2;
+}
+nav > ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav > ul > li {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+}
+
+/*=========*/
+/* Details */
+/*=========*/
+
+.shopping-cart {
+    font-size: 1.75rem;
+}
