@@ -1,0 +1,19 @@
+/*========*/
+/* Galery */
+/*========*/
+
+.galery {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.img-container {
+    margin: 1rem;
+}
+.img-t1 {
+    width: 16rem; height: 16rem;
+    object-fit: contain;
+    border: 1px solid var(--dark);
+    padding: 0.3rem;
+}
