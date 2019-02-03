@@ -24,6 +24,11 @@ section {
 h1 {
   margin-bottom: 1rem;
 }
+h3 {
+  font-size: 0.8rem;
+}
+
+
 .segment {
   margin: 0.5rem 0;
 }

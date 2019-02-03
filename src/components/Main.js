@@ -4,6 +4,7 @@ import Galery from "./Galery";
 import PropTypes from 'prop-types';
 
 class Main extends Component {
+
     render() {
         return (
             <main>
@@ -21,13 +22,13 @@ class Main extends Component {
                         </p>
                     </section>
         
-                    <Galery products_from_App= { this.props.products }/>
+                    <Galery products_from_App= { this.props.products } modShopCart={ this.props.modShopCart }/>
                     
                 </div>
             </main>
         );
-        }
     }
+}
 
 // PropTypes
 Main.propTypes = {
