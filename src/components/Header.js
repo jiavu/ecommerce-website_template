@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './header.css';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import '../styles/header.css';
 
 class Header extends Component {
     render() {
@@ -11,14 +13,17 @@ class Header extends Component {
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
+                            <li><Link to="/">Galery</Link></li>
+                            <li><Link to="/about">About</Link></li>
                             <li><a href="#">link3</a></li>
                             <li><a href="#">link4</a></li>
                         </ul>
                     </nav>
-                    <div>
-                        <a href="#" className="shopping-cart"><i className="fas fa-shopping-cart"></i></a>
+                    <div className="shopping-cart">
+                        <a href="#">
+                            <i className="fas fa-shopping-cart"></i>
+                        </a>
+                        <div className="shop-cart-length">{ this.props.shopCartList.length }</div>
                     </div>
                 </div>
 
@@ -31,5 +36,10 @@ class Header extends Component {
         );
         }
     }
+
+// PropTypes
+Header.propTypes = {
+    shopCartList: PropTypes.array.isRequired
+}
 
 export default Header;

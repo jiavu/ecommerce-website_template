@@ -2,11 +2,22 @@
 /* Galery */
 /*========*/
 
+img {
+    /* Disable right click context menu
+    for preventing download: */
+    pointer-events: none;
+}
+
 .galery {
     display: -webkit-flex;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    /* Disable text selection: */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .img-container {
     margin: 1rem;

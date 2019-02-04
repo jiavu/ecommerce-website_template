@@ -30,5 +30,13 @@ nav > ul > li {
 /*=========*/
 
 .shopping-cart {
+    position: relative;
     font-size: 1.75rem;
+}
+
+.shop-cart-length {
+    position: absolute;
+    bottom: 0; right: -0.6em;
+    color: var(--color1);
+    font-size: 0.42em;
 }

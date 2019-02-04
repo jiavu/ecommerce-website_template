@@ -5,13 +5,14 @@ class GaleryItem extends Component {
 
     render() {
 
-        return this.props.products_from_Galery.map( (item) => (
+        return this.props.products.map( (item) => (
             <div className="img-container" key={ item.id }>
                 <img src= { item.src } alt={ item.id } className="img-t1" />
                 <h4>{ item.name }</h4>
                 <p>Available: { item.available? "Yes" : "No" }</p>
                 <button type='button'
                         onClick={ this.props.modShopCart.bind(this, item) }
+                        disabled= { item.available? false : true }
                 >
                     { item.onHold? "Remove from Shopping Cart" : "Add to Shopping Cart"}
                 </button>
@@ -23,7 +24,8 @@ class GaleryItem extends Component {
 
 // PropTypes
 GaleryItem.propTypes = {
-    products_from_Galery: PropTypes.array.isRequired
+    products: PropTypes.array.isRequired,
+    modShopCart: PropTypes.func.isRequired
 }
 
 
