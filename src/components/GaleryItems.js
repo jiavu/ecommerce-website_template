@@ -14,7 +14,7 @@ class GaleryItem extends Component {
                         onClick={ this.props.modShopCart.bind(this, item) }
                         disabled= { item.available? false : true }
                 >
-                    { item.onHold? "Remove from Shopping Cart" : "Add to Shopping Cart"}
+                    { item.inCart? "Remove from Shopping Cart" : "Add to Shopping Cart"}
                 </button>
             </div>
 

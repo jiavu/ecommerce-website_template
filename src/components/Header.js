@@ -15,14 +15,14 @@ class Header extends Component {
                         <ul>
                             <li><Link to="/">Galery</Link></li>
                             <li><Link to="/about">About</Link></li>
-                            <li><a href="#">link3</a></li>
-                            <li><a href="#">link4</a></li>
+                            <li><Link to="/link3">link3</Link></li>
+                            <li><Link to="/link4">link4</Link></li>
                         </ul>
                     </nav>
                     <div className="shopping-cart">
-                        <a href="#">
+                        <Link to="/cart">
                             <i className="fas fa-shopping-cart"></i>
-                        </a>
+                        </Link>
                         <div className="shop-cart-length">{ this.props.shopCartList.length }</div>
                     </div>
                 </div>

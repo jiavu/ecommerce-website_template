@@ -21,7 +21,7 @@ class Galery extends Component {
 
 // PropTypes
 Galery.propTypes = {
-    products_from_App: PropTypes.array.isRequired,
+    products: PropTypes.array.isRequired,
     modShopCart: PropTypes.func.isRequired
 }
 
