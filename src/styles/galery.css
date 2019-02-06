@@ -22,6 +22,9 @@ img {
 .img-container {
     margin: 1rem;
 }
+.img-container:hover {
+    transform: scale(1.05);
+}
 .img-t1 {
     width: 16rem; height: 16rem;
     object-fit: contain;

@@ -18,7 +18,7 @@ const dataExample = {
             /* src : "../src/data/img_prev/id_002_250x250.png", */
             src : "https://via.placeholder.com/250/0000FF/FFFFFF",
             price : 1500.00,
-            available: false,
+            available: true,
             inCart: false
         },
         {

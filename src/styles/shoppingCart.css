@@ -13,3 +13,30 @@
     border-radius: 50%;
     cursor: pointer;
 }
+.removeButton:hover {
+    background-color: var(--color1);
+}
+
+.img-shp-cart {
+    width: 7rem; height: 7rem;
+    object-fit: contain;
+    /* border: 1px solid var(--dark);
+    padding: 0.3rem; */
+}
+
+.shop-cart table {
+    margin: 1rem;
+    border-collapse: collapse;
+}
+.shop-cart tbody td {
+    padding: 0.5rem 1.5rem;
+}
+.shop-cart tfoot td {
+    padding: 0.75rem 1.5rem;
+}
+.shop-cart tfoot td {
+    border-top: 1px solid var(--dark);
+}
+.shop-cart tbody tr:hover {
+    transform: scale(1.05);
+}

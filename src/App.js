@@ -21,6 +21,12 @@ class App extends Component {
       }
   }
 
+
+  formatPrice(value) {
+    return parseFloat(Math.round(value * 100) / 100).toFixed(2);
+  }
+
+
   modShopCart = (item) => {
     const shopCartListUpdate = item.inCart?
       this.state.shoppingCart.list.filter(i => i.id !== item.id )
@@ -47,6 +53,7 @@ class App extends Component {
       }
     });
   }
+
 
   render() {
     return (
@@ -80,7 +87,8 @@ class App extends Component {
                 <ShoppingCart shopCartList= { this.state.shoppingCart.list }
                               shopCartSum={ this.state.shoppingCart.sum }
                               currency={ this.state.currency }
-                              modShopCart={ this.modShopCart }/>
+                              modShopCart={ this.modShopCart }
+                              formatPrice={ this.formatPrice } />
               ) }/>
 
               <Route path="/terms_and_conditions" render={ props => (

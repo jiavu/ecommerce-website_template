@@ -6,12 +6,13 @@ class ShoppingCartItem extends Component {
     render() {
 
         const item = this.props.item;
+        const formatPrice = this.props.formatPrice;
 
         return (
             <tr>
                 <td><img src= { item.src } alt={ item.id } className="img-shp-cart" /></td>
-                <td>{ item.name }</td>
-                <td>{ this.props.curr } { item.price }</td>
+                <td className="item-name">{ item.name }</td>
+                <td>{ this.props.curr } { formatPrice(item.price) }</td>
                 <td>
                     <button type='button' className='removeButton'
                             onClick={ this.props.modShopCart.bind(this, item) }>
@@ -27,7 +28,8 @@ class ShoppingCartItem extends Component {
 ShoppingCartItem.propTypes = {
     item: PropTypes.object.isRequired,
     curr: PropTypes.string.isRequired,
-    modShopCart: PropTypes.func.isRequired
+    modShopCart: PropTypes.func.isRequired,
+    formatPrice: PropTypes.func.isRequired
 }
 
 
