@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Getting startet
+
+To run this project, Node.js has to be installed on your machine. After cloning it, run the following command in the repository folder to install all required Node.js packages:
+
+`npm install .`
+
+Now you are good to go. 
+
 ## Available Scripts
 
 In the project directory, you can run:
