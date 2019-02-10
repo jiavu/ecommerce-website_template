@@ -53,8 +53,18 @@ class ShoppingCart extends Component {
                         </table>
                     </div>
                 </div>
-                <div className="segment">
-                    <Link to="/">&lt;&lt; Continue shopping</Link>
+                <div className="segment shopping-cart-options">
+                    <div>
+                        <Link to="/">&lt;&lt; Continue shopping</Link>
+                    </div>
+                    <div>
+                        <button type="button" style={{ marginLeft:'2rem' }}
+                                disabled={ this.props.shopCartList.length < 1 }
+                                onClick={this.props.orderUpdatesState.bind(this, this.props.shopCartList)}>
+                            Order
+                        </button>
+                    </div>
+                    
                 </div>
             </section>
         )
@@ -67,7 +77,8 @@ ShoppingCart.propTypes = {
     shopCartSum: PropTypes.number.isRequired, 
     currency: PropTypes.string.isRequired,
     modShopCart: PropTypes.func.isRequired,
-    formatPrice: PropTypes.func.isRequired
+    formatPrice: PropTypes.func.isRequired,
+    orderUpdatesState: PropTypes.func.isRequired
 }
 
 export default ShoppingCart;

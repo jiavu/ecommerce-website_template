@@ -40,3 +40,8 @@
 .shop-cart tbody tr:hover {
     transform: scale(1.05);
 }
+
+.shopping-cart-options {
+    display: flex;
+    justify-content: center;
+}

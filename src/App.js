@@ -26,6 +26,20 @@ class App extends Component {
     return parseFloat(Math.round(value * 100) / 100).toFixed(2);
   }
 
+  orderUpdatesState = (shopCart) => {
+    this.setState( {
+      products: this.state.products.map( product => {
+        for (let i = 0; i < shopCart.length; i++) {
+          if ( shopCart[i].id === product.id) product.available = false;
+        }
+        return product;
+      }),
+      shoppingCart : {
+        list : [],
+        sum : 0
+      }
+    });
+  };
 
   modShopCart = (item) => {
     const shopCartListUpdate = item.inCart?
@@ -52,7 +66,7 @@ class App extends Component {
         sum : calcSum(shopCartListUpdate)
       }
     });
-  }
+  };
 
 
   render() {
@@ -88,7 +102,8 @@ class App extends Component {
                               shopCartSum={ this.state.shoppingCart.sum }
                               currency={ this.state.currency }
                               modShopCart={ this.modShopCart }
-                              formatPrice={ this.formatPrice } />
+                              formatPrice={ this.formatPrice }
+                              orderUpdatesState={ this.orderUpdatesState }/>
               ) }/>
 
               <Route path="/terms_and_conditions" render={ props => (
