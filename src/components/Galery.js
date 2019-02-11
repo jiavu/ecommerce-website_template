@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/galery.css';
 import GaleryItems from "./GaleryItems";
 import PropTypes from 'prop-types';
@@ -13,6 +14,9 @@ class Galery extends Component {
                 <div className="segment galery">
                     <GaleryItems products={ this.props.products }
                                 modShopCart={ this.props.modShopCart } />
+                </div>
+                <div className="segment small-link">
+                <Link to="/cart">Shopping Cart &gt;&gt;</Link>
                 </div>
             </section>
         );

@@ -19,7 +19,7 @@ class ShoppingCart extends Component {
             <section>
                 <h1>Shopping Cart</h1>
 
-                <div className="segment flex-center">
+                <div className="segment flex-column-center">
                     <div className="shop-cart">
                         <table>
                             {/* 
@@ -48,13 +48,14 @@ class ShoppingCart extends Component {
                                         { this.props.currency + " "}
                                         { formatPrice(this.props.shopCartSum) }
                                     </td>
+                                    <td />
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                 </div>
-                <div className="segment shopping-cart-options">
-                    <div>
+                <div className="segment flex-row">
+                    <div className="small-link">
                         <Link to="/">&lt;&lt; Continue shopping</Link>
                     </div>
                     <div>

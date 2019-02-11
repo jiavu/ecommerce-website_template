@@ -11,10 +11,12 @@ class ShoppingCartItem extends Component {
         return (
             <tr>
                 <td><img src= { item.src } alt={ item.id } className="img-shp-cart" /></td>
-                <td className="item-name">{ item.name }</td>
-                <td>{ this.props.curr } { formatPrice(item.price) }</td>
+                <td className="item-name parting">{ item.name }</td>
+                <td className="parting">
+                    { this.props.curr } { formatPrice(item.price) }
+                </td>
                 <td>
-                    <button type='button' className='removeButton'
+                    <button type='button' className='round'
                             onClick={ this.props.modShopCart.bind(this, item) }>
                         x
                     </button></td>

@@ -5,17 +5,41 @@ import SmShpCartItem from './SmShpCartItem';
 
 class SmShpCart extends Component {
 
+    state = {
+        listShown : false,
+    }
+
+    listWidth = null
+
+    componentWillUpdate = () => {
+        this.listWidth = "-" + document.getElementById("smShpCrt-list").offsetWidth + "px";
+    }
+
+    showList = () => {
+        let newState = !this.state.listShown;
+        this.setState( { listShown : newState })
+    }
+
     render() {
+
+        const shopCartList = this.props.shopCartList;
+        const cssClasses = "sm-shp-cart flex-row" + (shopCartList.length ? "" : " hidden");
+
         return (
-            <div style= { shopListStyle }>
-                <h3><Link to="/cart" style={{ color: 'var(--lightest)' }}>
-                        Shopping Cart:
-                    </Link></h3>
-                <ul>{
-                    this.props.shopCartList.map( (item) => (
-                        <SmShpCartItem key={item.id} item={item}/>
-                    ))
-                }</ul>
+            <div className={ cssClasses }
+                style={ this.state.listShown? {right:0} : {right:this.listWidth} }
+                onClick={this.showList}>
+                <div className="schniepel">
+                    <h4><i className="fas fa-shopping-cart"></i></h4>
+                </div>
+                <div id="smShpCrt-list">
+                    <ul>{
+                        shopCartList.map( (item) => (
+                            <SmShpCartItem key={item.id} item={item}/>
+                        ))}
+                    </ul>
+                    {/* <Link to="/cart">&gt;</Link> */}
+                </div>
             </div>
         )
     }
@@ -26,15 +50,8 @@ SmShpCart.propTypes = {
     shopCartList: PropTypes.array.isRequired
 }
 
-const shopListStyle = {
-    /* display: this.props.shopCartList.length? 'block' : 'none', */
-    border: "1px solid black",
-    position: "fixed",
-    top: '20%', right: 0,
-    backgroundColor: "var(--dark)",
-    color: "var(--lightest)",
-    padding: "0.5rem",
-    margin: "0.3rem"
-}
 
 export default SmShpCart;
+
+
+/* style={{ color: 'var(--lightest)' }} */

@@ -19,15 +19,30 @@ img {
     -ms-user-select: none;
     user-select: none;
 }
-.img-container {
+.proj-container {
     margin: 1rem;
 }
-.img-container:hover {
-    transform: scale(1.05);
+.proj-container .hoverable {
+    transition: transform var(--trans-time-slow);
+}
+.proj-container .hoverable:hover,
+.proj-container .hoverable:focus {
+    transform: scale(1.035);
 }
 .img-t1 {
     width: 16rem; height: 16rem;
     object-fit: contain;
     border: 1px solid var(--dark);
     padding: 0.3rem;
+}
+
+.proj-info {
+    justify-content: space-between;
+}
+.proj-info h4 {
+    margin: 0.5rem;
+    /* font-weight: normal; */
+}
+.proj-info p {
+    font-size: 0.8rem;
 }

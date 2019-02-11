@@ -14,15 +14,17 @@ function get_int_str(this_int) {
 
 // Create an array with the names path to the images.
 var path_to_img = [];
-for (var i=0; i<n_img; i++) {
-    var this_img_name = "img" + get_int_str(i+1) + ".jpg";
+
+for (var i = 0; i < n_img; i++) {
+    var this_img_name = "img" + get_int_str(i + 1) + ".jpg";
     var this_img_path = path.resolve(img_folder_path, this_img_name);
     path_to_img.push(this_img_path);
 }
 
 // Create the product JSON for each image.
 var all_products = [];
-for (var i_prod=0; i_prod<n_img; i_prod++) {
+
+for (var i_prod = 0; i_prod < n_img; i_prod++) {
     var this_product = {
         id : i_prod,
         name : get_int_str(i_prod),
